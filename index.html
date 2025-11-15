@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing Brand Waitlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .waitlist-section {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .waitlist-section h1 {
+            text-align: center;
+            color: #333;
+        }
+        .waitlist-section p {
+            text-align: center;
+            color: #666;
+        }
+        .waitlist-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .waitlist-form label {
+            margin: 10px 0 5px;
+            color: #333;
+        }
+        .waitlist-form input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .waitlist-form button {
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .waitlist-form button:hover {
+            background-color: #4cae4c;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            color: #5cb85c;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">BORNBARE</div>
+</header>
+<main>
+    <section class="waitlist-section">
+        <h1>Join Our Waitlist</h1>
+        <p>Be the first to know when our new collection launches! Enter your details below.</p>
+        <div class="waitlist-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button onclick="submitForm()">Join Waitlist</button>
+            <div class="success-message" id="successMessage">Thank you for joining our waitlist!</div>
+        </div>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2025 BORNBARE. All Rights Reserved.</p>
+</footer>
+
+<script>
+    function submitForm() {
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        
+        if (name && email) {
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            
+            setTimeout(() => {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
+        }
+    }
+</script>
+</body>
+</html>
